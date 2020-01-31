@@ -46,23 +46,23 @@ def move(my_history, their_history, my_score, their_score):
     #return 'c'
     
     
-    if(len(my_history) < 3):
+    if(len(my_history) < 3): #Lead with three colludes to fool the enemy into thinking that all is good, then betray for the rest of the game
         return 'c'
     else:
         return 'b'
     #Other possible strategies
-    #if(len(my_history) == 1):
+    #if(len(my_history) == 1): #Lead with a betray, then drop a collude in order to hopefully fool the person into thinking that the person will stil collude, then betray for the rest of the game 
     #   return 'c'
     #else:
     #   return 'b'
     
     
-    #if(len(my_history) == 0):
+    #if(len(my_history) == 0): #Lead with a collude, then betray for the rest of the game
     #   return 'c'
     #else:
     #   return 'b'
     
-    #if(justbetrayed):
+    #if(justbetrayed):     #Complicated algorithm: checks for a point difference. If we're losing or the point difference is zero, betray. If we just betrayed, we can expect a betrayal, so betray again. If we're ahead, collude, since it's probably safe to. 
     #   justbetrayed = False
     #   return 'b'
     #   
@@ -81,3 +81,4 @@ def test_move(my_history, their_history, my_score, their_score, result):
     real_result = move(my_history, their_history, my_score, their_score)
     if real_result == result:
         return True
+    
