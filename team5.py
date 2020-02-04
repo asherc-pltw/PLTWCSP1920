@@ -3,12 +3,13 @@
 #     team_name: a string
 #     strategy_name: a string
 #     strategy_description: a string
-#     move: A function that returns 'c' or 'b'
-####
+#     move: A function that returns 'c' or 'b'####
 
-team_name = 'team1' # Only 10 chars displayed
-strategy_name = 'Betray'
-strategy_description = 'Always betray.'
+team_name = 'teamfive'
+strategy_name = 'betray but collide'
+strategy_description = '''\
+Betray first round. Betray, except in a round after getting 
+a punishment then collide.'''
     
 def move(my_history, their_history, my_score, their_score):
     '''Make my move based on the history with this player.
@@ -20,6 +21,10 @@ def move(my_history, their_history, my_score, their_score):
     
     Returns 'c' or 'b' for collude or betray.
     '''
+    if len(my_history)==0: # It's the first round; Betray.
+        return 'b'
+    if len( their_history)==-1:
+        return 'b'
     
-    #This example player always betrays.      
-    return 'b'
+    else:
+        return 'c' # otherwise collude.
