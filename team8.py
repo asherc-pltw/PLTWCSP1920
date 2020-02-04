@@ -73,11 +73,11 @@ def move(my_history, their_history, my_score, their_score):
     #   return 'c'
     
     for i in 4: #Use complex algorithm but start off with collude, collude, betray, collude
-        if i == 0 or i == 1 or i == 3:
+        if not i == 2:
             if justbetrayed:
                 justbetrayed = False
             return 'c'
-        elif i == 2:
+        else:
             return 'b'
             justbetrayed = True
     if(justbetrayed):
