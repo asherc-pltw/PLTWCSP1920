@@ -6,9 +6,9 @@
 #     move: A function that returns 'c' or 'b'
 ####
 
-team_name = 'team0' # Only 10 chars displayed
-strategy_name = 'Collude'
-strategy_description = 'Always collude.'
+team_name = 'Cornavirus' # Only 10 chars displayed
+strategy_name = 'background check'
+strategy_description = 'if the other team has a history of betraying, betray. if they are trustworthy, collude'
     
 def move(my_history, their_history, my_score, their_score):
     '''Make my move based on the history with this player.
@@ -21,6 +21,12 @@ def move(my_history, their_history, my_score, their_score):
     Returns 'c' or 'b' for collude or betray.
     '''
     
-    # This player always colludes.
-    return 'c'
+    # this player does a background check to see if the other player is trustworthy or not.
+    if 'b' in their_history[-9:] > 6:
+        return 'b'
+    else:
+        return 'c'
+        
+        
+    
     
