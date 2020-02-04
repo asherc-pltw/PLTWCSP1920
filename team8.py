@@ -72,7 +72,7 @@ def move(my_history, their_history, my_score, their_score):
     #elif(my_score - their_score >= 0):
     #   return 'c'
     
-    for i in 4: #Use complex algorithm but start off with collude, collude, betray, collude
+    for i in range(4): #Use complex algorithm but start off with collude, collude, betray, collude
         if not i == 2:
             if justbetrayed:
                 justbetrayed = False
