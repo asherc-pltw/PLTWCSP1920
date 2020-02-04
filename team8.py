@@ -80,7 +80,7 @@ def move(my_history, their_history, my_score, their_score):
         else:
             return 'b'
             justbetrayed = True
-    if(justbetrayed):
+    if(justbetrayed): #Complex algorithm here
        return 'b'
     elif((my_score - their_score) <= 0):
        justbetrayed = True
