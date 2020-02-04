@@ -8,9 +8,9 @@
 
 #version 1/28/30
 team_name = 'collusion8' # Only 10 chars displayed
-strategy_name = 'Collude'
-strategy_description = 'Always collude.'
-    
+strategy_name = 'Collude pattern then point difference check'
+strategy_description = 'Start with collude, collude, betray, collude then check for a point difference. If losing or the point difference is zero, betray. If just betrayed, expect a betrayal, so betray again. If ahead, collude, since it is probably safe to.'
+
 global justbetrayed #boolean for one of the strategy to indicate that we've just betrayed.   
 justbetrayed = False 
 def move(my_history, their_history, my_score, their_score):
