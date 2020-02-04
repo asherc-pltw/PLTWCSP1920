@@ -3,17 +3,13 @@
 #     team_name: a string
 #     strategy_name: a string
 #     strategy_description: a string
-#     move: A function that returns 'c' or 'b'
-####
+#     move: A function that returns 'c' or 'b'####
 
-team_name = 'E5'
-strategy_name = 'Collude first 100 rounds unless betrayed. Betray 101st round forward.'
+team_name = 'teamfive'
+strategy_name = 'betray but collide'
 strategy_description = '''\
-Betray if ever betrayed.
-If I haven't been betrayed yet, I'll betray starting with the 100th round.
-'''
-
-import random
+Betray first round. Betray, except in a round after getting 
+a punishment then collide.'''
     
 def move(my_history, their_history, my_score, their_score):
     '''Make my move based on the history with this player.
@@ -25,11 +21,10 @@ def move(my_history, their_history, my_score, their_score):
     
     Returns 'c' or 'b' for collude or betray.
     '''
-    # If the other player has betrayed or this is the last half of the game, 
-    if 'b' in their_history or len(their_history)>100: 
-        return 'b'               # Betray.
+    if len(my_history)==0: # It's the first round; Betray.
+        return 'b'
+    if len( their_history)==-1:
+        return 'b'
+    
     else:
-        return 'c'         # but 90% of the time collude
-    
-    
-    
+        return 'c' # otherwise collude.
