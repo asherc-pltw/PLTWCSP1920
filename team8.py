@@ -46,10 +46,10 @@ def move(my_history, their_history, my_score, their_score):
     #return 'c'
     
     
-    if(len(my_history) < 3): #Lead with three colludes to fool the enemy into thinking that all is good, then betray for the rest of the game
-        return 'c'
-    else:
-        return 'b'
+    #if(len(my_history) < 3): #Lead with three colludes to fool the enemy into thinking that all is good, then betray for the rest of the game
+    #    return 'c'
+    #else:
+    #    return 'b'
     #Other possible strategies
     #if(len(my_history) == 1): #Lead with a betray, then drop a collude in order to hopefully fool the person into thinking that the person will stil collude, then betray for the rest of the game 
     #   return 'c'
